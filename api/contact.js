@@ -1,7 +1,7 @@
 const { CustomersMailCloud } = require('customersmailcloud');
 
 module.exports = async (req, res) => {
-  const {email, name, body} = JSON.parse(req.body);
+  const {email, name, body} = req.body;
   const client = new CustomersMailCloud(process.env.API_USER, process.env.API_KEY)
   client.trial();
   client
